@@ -79,9 +79,49 @@ const displayPhoneDelails = async (id) =>{
  detailsModul(data.data)
 }
 const detailsModul = phoneDetail =>{
-    const {brand, image, mainFeatures, name, releaseDate, slug} = phoneDetail
+    const {brand, image, mainFeatures, name, releaseDate, slug, others} = phoneDetail
 console.log(phoneDetail);
 const modelTital = document.getElementById("phoneDetailsModulLabel")
 modelTital.innerText = `${name}`
+const modalBody = document.getElementById("modal-body")
+modalBody.innerHTML=``;
+const div = document.createElement('div');
+div.innerHTML=`
+<div class="card border-0">
+  <div class="row g-0">
+    <div class="col-md-6">
+      <img style="height:100%; width:100%" src="${image}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-6">
+      <div  class="card-body">
+        <h5 class="card-title">Brand: ${brand? brand:"Brand Name Not Found"}</h5>
+        <p class="card-text">Modal: ${slug}</p>
+        <p class="card-text">ReleaseDate: ${releaseDate}</p>
+        <h5>MainFeatures:</h5>
+        <p>ChipSet: ${mainFeatures.chiSet}</p>
+        <p>DisplaySize: ${mainFeatures.displaySize}</p>
+        <p>Memory: ${mainFeatures.memory}</p>
+        <ul>
+        <h5>Sensor</h5>
+        <li>${mainFeatures.sensors[0]}</li>
+        <li>${mainFeatures.sensors[1]}</li>
+        <li>${mainFeatures.sensors[2]}</li>
+        <li>${mainFeatures.sensors[3]}</li>
+        <li>${mainFeatures.sensors[4]}</li>
+        </ul>
+        <p>Storage: ${mainFeatures.storage}</p>
+        <h5>Others:</h5>
+        <p>Bluetooth: ${others? others.Bluetooth:"Bluetooth not found"}</p>
+        <p>GPS: ${others? others.GPS:"GPS not found"}</p>
+        <p>NFC: ${others? others.NFC:"NFC not Found"}</p>
+        <p>Radio: ${others? others.Radio:"Radio Not Found"}</p>
+        <p>USB: ${others?others.USB:"USB not found"}</p>
+        <p>WLAN: ${others?others.WLAN:"Wifi not Found"}</p>
+      </div>
+    </div>
+  </div>
+</div>
+`
+modalBody.appendChild(div)
 
 }
