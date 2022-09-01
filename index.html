@@ -14,7 +14,7 @@
         <h1>Phone Hanting</h1>
         <div class="d-flex justify-content-center">
             <div class="input-group w-50 mb-3">
-                <input id="input-phone" type="text" class="form-control" placeholder="Search Your Phone" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <input id="input-phone" type="text" class="form-control" placeholder="Search Phone" aria-label="Recipient's username" aria-describedby="basic-addon2">
                 <span onclick="searchPhone()" class="input-group-text" id="basic-addon2">Search</span>
               </div>
         </div>
@@ -25,22 +25,45 @@
 
             </div>
             <div id="alart" class="d-none">
-                <h3 class="text-warning p-0 mt-2 mb-0">No Phone found, Pheash try in new search</h3>
+                <h3 class="text-warning p-0 mt-5 mb-0">No Phone found, Pheash try in new search</h3>
             </div>
         </section>
         <!-- loding -->
         <section>
             <div id="spinner" class="d-flex d-none justify-content-center mt-5">
-                <div class="spinner-border text-warning text-bold fs-1" style="width: 5rem; height: 5rem;" role="status">
+                <div class="spinner-border text-warning text-bold fs-3" style="width: 5rem; height: 5rem;" role="status">
                     <span class="visually-hidden">Loading...</span>
                   </div>
               </div>
         </section>
         <section>
-            <div id="btn-nane" class="d-flex d-none mt-5 justify-content-center">
-                <button style="background-color:#FFCB69; color:white" class="btn px-5 fw-bolder">See All</button>
+            <div id="btn-none" class="d-flex d-none mt-5 justify-content-center">
+                <button id="all-show" style="background-color:#D57d1f; color:white" class="btn px-5 fw-bolder">See All</button>
                 
             </div>
+        </section>
+        <!-- delail modol -->
+        <section>
+            <!-- Button trigger modal -->
+  
+  <!-- Modal -->
+  <div style="color:#e69e51; background-color:rgba(255, 255, 255, 0);" class="modal fade" id="phoneDetailsModul" tabindex="-1" aria-labelledby="phoneDetailsModulLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="phoneDetailsModulLabel">Modal title</h5>
+          <button  style="background-color:#f18007;" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
         </section>
     </main>
     <footer>
